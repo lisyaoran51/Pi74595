@@ -34,8 +34,8 @@ int main(int argc, char **argv) {
     int s, i, j, interval ,n , lastpacketsize, lampindex, c;
     int port;
     size_t slen;
-    char buf[BUFLEN];
-    char laststate[BUFLEN];
+    //char buf[BUFLEN];
+    //char laststate[BUFLEN];
 	int lamps[LAMPS_COUNT];
 	int map[LAMPS_COUNT];
 	map[0] = 33;
