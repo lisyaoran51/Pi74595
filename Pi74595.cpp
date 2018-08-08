@@ -15,8 +15,13 @@
 //#include "clientserver.h"
 //#include "demonize.h"
 
+//data DS 
 #define DI_PIN RPI_GPIO_P1_18 
+
+//clock SH_CP
 #define CL_PIN RPI_GPIO_P1_16
+
+//latch ST_CP
 #define CE_PIN RPI_GPIO_P1_22
 #define true 1
 #define false 0
@@ -25,6 +30,8 @@
 
 // get bcm2835
 // http://www.raspberry-projects.com/pi/programming-in-c/io-pins/bcm2835-by-mike-mccauley
+// g++ Pi74595.cpp -lbcm2835
+
 
  
   
@@ -150,14 +157,14 @@ int main(int argc, char **argv) {
 				//	}
 				//}
 				
-				   for (c = 0; c < 40; c++) {
+				   for (c = 0; c < 8; c++) {
 				   /*
 						printf("%d" , lamps[c]);
 						if(lamps[c]){
 							printf(" %d - %d \n", c , lamps[c]);
 						}
 					*/
-						bcm2835_gpio_write(DI_PIN,lamps[c]);
+						bcm2835_gpio_write(DI_PIN,c%2);
 						usleep(interval);
 						bcm2835_gpio_write(CL_PIN, HIGH);
 						usleep(interval);
