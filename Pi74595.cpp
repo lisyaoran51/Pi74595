@@ -121,7 +121,7 @@ int main(int argc, char **argv) {
     //}
 	lampindex = 0;
     while (1) {
-			memset(buf, 0, sizeof (char) *BUFLEN);
+			//memset(buf, 0, sizeof (char) *BUFLEN);
 			//n=recvfrom(s, buf, BUFLEN, 0, (struct sockaddr *) &si_remote, &slen);
 			/* 
 			//if (
@@ -137,18 +137,18 @@ int main(int argc, char **argv) {
 			//	printf("state request %s:%d \n", inet_ntoa(si_remote.sin_addr), ntohs(si_remote.sin_port));
 			//}else{
 				/* printf("%s:%d ", inet_ntoa(si_remote.sin_addr), ntohs(si_remote.sin_port)); */
-				laststate[0]=buf[0]; 
-				lastpacketsize = n;
- 
-				lampindex = 0;
-				for (j = 1; j < buf[0]; j++) {
-					laststate[j]=buf[j];
-				   for (i = 0; i < 8; i++) {
-						/* printf(" %d - %d \n", lampindex , map[lampindex]); */
-						lamps[map[lampindex]] = (buf[j] & (0x80 >> i))>0;
-						lampindex++;
-					}
-				}
+				//laststate[0]=buf[0]; 
+				//lastpacketsize = n;
+                //
+				//lampindex = 0;
+				//for (j = 1; j < buf[0]; j++) {
+				//	laststate[j]=buf[j];
+				//   for (i = 0; i < 8; i++) {
+				//		/* printf(" %d - %d \n", lampindex , map[lampindex]); */
+				//		lamps[map[lampindex]] = (buf[j] & (0x80 >> i))>0;
+				//		lampindex++;
+				//	}
+				//}
 				
 				   for (c = 0; c < 40; c++) {
 				   /*
