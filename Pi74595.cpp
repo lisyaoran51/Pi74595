@@ -39,6 +39,9 @@ int main(int argc, char **argv) {
 
     //struct sockaddr_in si_local, si_remote;
     int s, i, j, interval ,n , lastpacketsize, lampindex, c;
+	
+	interval = 1000;
+	
     int port;
     size_t slen;
     //char buf[BUFLEN];
@@ -164,18 +167,18 @@ int main(int argc, char **argv) {
 							printf(" %d - %d \n", c , lamps[c]);
 						}
 					*/
-						bcm2835_gpio_write(DI_PIN,c%2);
+						bcm2835_gpio_write(DI_PIN,0);
 						usleep(interval);
 						bcm2835_gpio_write(CL_PIN, HIGH);
 						usleep(interval);
-						bcm2835_gpio_write(DI_PIN, LOW);
+						//bcm2835_gpio_write(DI_PIN, LOW);
 						bcm2835_gpio_write(CL_PIN, LOW);
 						usleep(interval);
 					}
 				/*printf("\n"); */
 				usleep(interval);
 				bcm2835_gpio_write(CE_PIN, HIGH);
-				usleep(interval);
+				usleep(1000*interval);
 				bcm2835_gpio_write(CE_PIN, LOW);
 			//}
 		}
