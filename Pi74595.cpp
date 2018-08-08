@@ -23,6 +23,8 @@
 
 #define LAMPS_COUNT 40
 
+// get bcm2835
+// http://www.raspberry-projects.com/pi/programming-in-c/io-pins/bcm2835-by-mike-mccauley
 
  
   
