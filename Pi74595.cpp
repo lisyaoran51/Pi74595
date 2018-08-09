@@ -172,18 +172,17 @@ int main(int argc, char **argv) {
 						}
 					*/
 						bcm2835_gpio_write(DI_PIN,change ? 1 : 0 );
-						usleep(interval);
-						bcm2835_gpio_write(CL_PIN, HIGH);
-						usleep(interval);
-						//bcm2835_gpio_write(DI_PIN, LOW);
+						//usleep(interval);
 						bcm2835_gpio_write(CL_PIN, LOW);
-						usleep(interval);
+						//bcm2835_gpio_write(DI_PIN, LOW);
+						bcm2835_gpio_write(CL_PIN, HIGH);
+						//usleep(interval);
 					}
 					change = !change;
+					printf(" %d\n", c , (int)change);
 				/*printf("\n"); */
-				usleep(interval);
+				usleep(50 * interval);
 				bcm2835_gpio_write(CE_PIN, HIGH);
-				usleep(1000*interval);
 				bcm2835_gpio_write(CE_PIN, LOW);
 			//}
 		}
