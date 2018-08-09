@@ -32,6 +32,8 @@
 // http://www.raspberry-projects.com/pi/programming-in-c/io-pins/bcm2835-by-mike-mccauley
 // g++ Pi74595.cpp -lbcm2835
 
+// https://appelsiini.net/2012/driving-595-shift-registers/
+
 
  
   
@@ -130,7 +132,7 @@ int main(int argc, char **argv) {
     //    exit(EXIT_FAILURE);
     //}
 	
-	bool change = ture;
+	bool change = true;
 	lampindex = 0;
     while (1) {
 			//memset(buf, 0, sizeof (char) *BUFLEN);
