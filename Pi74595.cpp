@@ -15,14 +15,31 @@
 //#include "clientserver.h"
 //#include "demonize.h"
 
+// https://github.com/mignev/shiftpi
+/*
+
+SER = 25 (GPIO RPI) #pin 14 on the 75HC595
+DS
+
+RCLK = 24 (GPIO RPI) #pin 12 on the 75HC595
+ST_CP
+
+SRCLK = 23 (GPIO RPI) #pin 11 on the 75HC595
+SH_CP
+
+*/
+
 //data DS 
-#define DI_PIN RPI_GPIO_P1_18 
+//#define DI_PIN RPI_GPIO_P1_18 
+#define DI_PIN RPI_BPLUS_GPIO_J8_25 
 
 //clock SH_CP
-#define CL_PIN RPI_GPIO_P1_16
+//#define CL_PIN RPI_GPIO_P1_16
+#define CL_PIN RPI_BPLUS_GPIO_J8_23 
 
 //latch ST_CP
-#define CE_PIN RPI_GPIO_P1_22
+//#define CE_PIN RPI_GPIO_P1_22
+#define CE_PIN RPI_BPLUS_GPIO_J8_24
 #define true 1
 #define false 0
 
@@ -33,6 +50,9 @@
 // g++ Pi74595.cpp -lbcm2835
 
 // https://appelsiini.net/2012/driving-595-shift-registers/
+
+
+
 
 
  
