@@ -179,7 +179,7 @@ int main(int argc, char **argv) {
 						//usleep(interval);
 					}
 					change = !change;
-					printf(" %d\n", c , (int)change);
+					printf(" %d\n", c , change?1:0);
 				/*printf("\n"); */
 				usleep(50 * interval);
 				bcm2835_gpio_write(CE_PIN, HIGH);
