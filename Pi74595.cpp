@@ -163,6 +163,7 @@ int main(int argc, char **argv) {
 				//		lampindex++;
 				//	}
 				//}
+				bcm2835_gpio_write(CE_PIN, LOW);
 				
 				   for (c = 0; c < 8; c++) {
 				   /*
@@ -171,9 +172,9 @@ int main(int argc, char **argv) {
 							printf(" %d - %d \n", c , lamps[c]);
 						}
 					*/
-						bcm2835_gpio_write(DI_PIN,change ? HIGH : LOW );
 						//usleep(interval);
 						bcm2835_gpio_write(CL_PIN, LOW);
+						bcm2835_gpio_write(DI_PIN,change ? HIGH : LOW );
 						//bcm2835_gpio_write(DI_PIN, LOW);
 						bcm2835_gpio_write(CL_PIN, HIGH);
 						//usleep(interval);
@@ -181,8 +182,7 @@ int main(int argc, char **argv) {
 					change = !change;
 					printf(" %d\n", change?1:0);
 				/*printf("\n"); */
-				usleep(50 * interval);
-				bcm2835_gpio_write(CE_PIN, LOW);
+				//usleep(50 * interval);
 				bcm2835_gpio_write(CE_PIN, HIGH);
 			//}
 		}
