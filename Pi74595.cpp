@@ -129,6 +129,8 @@ int main(int argc, char **argv) {
     //    perror("bind");
     //    exit(EXIT_FAILURE);
     //}
+	
+	bool change = ture;
 	lampindex = 0;
     while (1) {
 			//memset(buf, 0, sizeof (char) *BUFLEN);
@@ -167,7 +169,7 @@ int main(int argc, char **argv) {
 							printf(" %d - %d \n", c , lamps[c]);
 						}
 					*/
-						bcm2835_gpio_write(DI_PIN,0);
+						bcm2835_gpio_write(DI_PIN,change ? 1 : 0 );
 						usleep(interval);
 						bcm2835_gpio_write(CL_PIN, HIGH);
 						usleep(interval);
@@ -175,6 +177,7 @@ int main(int argc, char **argv) {
 						bcm2835_gpio_write(CL_PIN, LOW);
 						usleep(interval);
 					}
+					change = !change;
 				/*printf("\n"); */
 				usleep(interval);
 				bcm2835_gpio_write(CE_PIN, HIGH);
