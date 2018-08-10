@@ -193,8 +193,8 @@ int main(int argc, char **argv) {
 						}
 					*/
 						//usleep(interval);
-						bcm2835_gpio_write(CL_PIN, c % 2);
-						bcm2835_gpio_write(DI_PIN,change ? HIGH : LOW );
+						bcm2835_gpio_write(CL_PIN, LOW);
+						bcm2835_gpio_write(DI_PIN,c%2 );
 						//bcm2835_gpio_write(DI_PIN, LOW);
 						bcm2835_gpio_write(CL_PIN, HIGH);
 						//usleep(interval);
